@@ -1,7 +1,7 @@
 extends PlayerState
 ### WALK
 
-const TURN_SPEED = 15.0
+const TURN_SPEED = 150.0
 
 var player_rotation = 0
 
@@ -20,7 +20,8 @@ func _physics_update_state(delta: float) -> void:
 			player.direction = move_direction
 		var angle_to_move_direction = Vector2.UP.angle_to(Vector2(move_direction.x, -move_direction.y))
 		#var dir = Vector3.ZERO.look_at(Vector3(move_direction.x,0,move_direction.y))
-		player_rotation = lerp_angle(player_rotation, angle_to_move_direction, TURN_SPEED * delta)
+		#player_rotation = lerp_angle(player_rotation, angle_to_move_direction, TURN_SPEED * delta)
+		player_rotation = angle_to_move_direction
 		var move_velocity = move_direction * Player.SPEED
 		player.velocity = Vector3(move_velocity.x, player.velocity.y, move_velocity.y)
 	else:

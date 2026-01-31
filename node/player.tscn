@@ -39,3 +39,9 @@ metadata/_custom_type_script = "uid://cigifrvr4jil7"
 [node name="Bash" type="Node" parent="PlayerStateMachine" unique_id=922323001]
 script = ExtResource("5_3bvod")
 metadata/_custom_type_script = "uid://cigifrvr4jil7"
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1893362473]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.25343156, 0)
+light_color = Color(1, 1, 0, 1)
+spot_range = 2.7141414
+spot_angle = 27.98753
