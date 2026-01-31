@@ -1,3 +1,18 @@
 [gd_scene format=3 uid="uid://c71la4alo7ki1"]
 
-[node name="Player" type="Node2D" unique_id=123102481]
+[ext_resource type="Script" uid="uid://bcrlw1eb4lpmw" path="res://scripts/player.gd" id="1_1n1oq"]
+[ext_resource type="Texture2D" uid="uid://c24gq06dj6366" path="res://thirdparty/kenney-scribble-platformer/PNG/Default/character_roundGreen.png" id="1_ial8t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1n1oq"]
+radius = 18.027756
+
+[node name="Player" type="CharacterBody2D" unique_id=1861747996]
+motion_mode = 1
+script = ExtResource("1_1n1oq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=847813234]
+position = Vector2(0, -10)
+texture = ExtResource("1_ial8t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=726122701]
+shape = SubResource("CircleShape2D_1n1oq")
