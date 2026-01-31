@@ -2,11 +2,11 @@ extends PlayerState
 ### WALK
 
 func _update_state(_delta: float) -> void:
-	if Input.is_action_just_pressed("p-bash"):
+	if player.input.is_action_just_pressed("bash"):
 		state_transition.emit(self, "bash")
 
 func _physics_update_state(delta: float) -> void:
-	var move_direction: Vector2 = Input.get_vector("p-left", "p-right", "p-up", "p-down")
+	var move_direction: Vector2 = player.input.get_vector("left", "right", "up", "down")
 	
 	if move_direction:
 		if move_direction.length() > 1.0:
