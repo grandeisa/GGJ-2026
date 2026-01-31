@@ -9,3 +9,7 @@ const SPEED = 10.0
 @onready var input: PlayerInput = $PlayerInput
 
 var direction: Vector2 = Vector2.UP
+
+func _physics_process(delta: float) -> void:
+	if not is_on_floor():
+		velocity += get_gravity() * delta

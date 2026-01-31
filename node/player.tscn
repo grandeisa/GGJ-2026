@@ -12,7 +12,6 @@ radius = 0.32128906
 height = 1.081543
 
 [node name="Player" type="CharacterBody3D" unique_id=255802474]
-motion_mode = 1
 script = ExtResource("1_1n1oq")
 bash_velocity = 30.0
 bash_duration = 0.35

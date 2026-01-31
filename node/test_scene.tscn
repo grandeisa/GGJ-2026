@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c71la4alo7ki1" path="res://node/player.tscn" id="1_dud2x"]
 [ext_resource type="PackedScene" uid="uid://gmbmcm4il4nw" path="res://node/test_map.tscn" id="2_qfgip"]
 [ext_resource type="PackedScene" uid="uid://cvwekly5f6bwj" path="res://node/enemy.tscn" id="3_4sl5o"]
+[ext_resource type="PackedScene" uid="uid://bdvl2rhle25f0" path="res://node/throwable.tscn" id="4_uam1e"]
 
 [sub_resource type="Environment" id="Environment_qfgip"]
 background_mode = 2
@@ -27,3 +28,6 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.33
 
 [node name="Enemy2" parent="." unique_id=593822985 instance=ExtResource("3_4sl5o")]
 transform = Transform3D(0.28394836, 0, 0.9588396, 0, 1, 0, -0.9588396, 0, 0.28394836, -3.3510466, 0.1, 0.6432457)
+
+[node name="Throwable" parent="." unique_id=108535842 instance=ExtResource("4_uam1e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5934471, 0.5670419, 1)
