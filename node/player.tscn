@@ -11,6 +11,9 @@
 radius = 0.32128906
 height = 1.081543
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_ourj3"]
+radius = 1.0
+
 [node name="Player" type="CharacterBody3D" unique_id=255802474]
 script = ExtResource("1_1n1oq")
 bash_velocity = 30.0
@@ -44,3 +47,12 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 light_color = Color(1, 1, 0, 1)
 spot_range = 2.7141414
 spot_angle = 27.98753
+
+[node name="ItemArea3D" type="Area3D" parent="." unique_id=1614197746]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ItemArea3D" unique_id=1794583153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_ourj3")
+
+[node name="ItemOrigin" type="Node3D" parent="." unique_id=1302928198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)
