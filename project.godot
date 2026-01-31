@@ -144,6 +144,14 @@ j2-item={
 "events": []
 }
 
+[layer_names]
+
+3d_physics/layer_1="Map"
+3d_physics/layer_2="Player"
+3d_physics/layer_3="Enemy"
+3d_physics/layer_4="Throwable"
+3d_physics/layer_5="Coin"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

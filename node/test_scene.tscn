@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://gmbmcm4il4nw" path="res://node/test_map.tscn" id="2_qfgip"]
 [ext_resource type="PackedScene" uid="uid://cvwekly5f6bwj" path="res://node/enemy.tscn" id="3_4sl5o"]
 [ext_resource type="PackedScene" uid="uid://bdvl2rhle25f0" path="res://node/throwable.tscn" id="4_uam1e"]
+[ext_resource type="PackedScene" uid="uid://cyxdjrm3dp1pk" path="res://node/coin.tscn" id="5_w8cq1"]
 
 [sub_resource type="Environment" id="Environment_qfgip"]
 background_mode = 2
@@ -31,3 +32,15 @@ transform = Transform3D(0.28394836, 0, 0.9588396, 0, 1, 0, -0.9588396, 0, 0.2839
 
 [node name="Throwable" parent="." unique_id=108535842 instance=ExtResource("4_uam1e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5934471, 0.5670419, 1)
+
+[node name="Coin" parent="." unique_id=242903663 instance=ExtResource("5_w8cq1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3865345, 0.2999999, 2.4820347)
+
+[node name="Coin2" parent="." unique_id=305210093 instance=ExtResource("5_w8cq1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4068708, 0.2999999, 1.2240872)
+
+[node name="Coin3" parent="." unique_id=296924212 instance=ExtResource("5_w8cq1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2972136, 0.29999942, -1.0715094)
+
+[node name="Coin4" parent="." unique_id=1720732916 instance=ExtResource("5_w8cq1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.656611, 0.2999999, 3.0624638)

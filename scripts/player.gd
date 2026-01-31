@@ -3,6 +3,8 @@ extends CharacterBody3D
 
 const SPEED = 10.0
 
+var coin_count = 0
+
 @export var bash_velocity = 40.0
 @export var bash_duration = 1.0
 
@@ -15,3 +17,9 @@ var direction: Vector2 = Vector2.UP
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
+	for node in item_area.get_overlapping_bodies():
+		if node.is_in_group("coin"):
+			coin_count += 1
+			node.queue_free()
+			
