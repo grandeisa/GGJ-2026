@@ -9,7 +9,6 @@ const TURN_SPEED = 30.0
 
 @onready var light: SpotLight3D = $SpotLight3D
 @onready var view_area: Area3D = $Area3D
-@onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 
 var target: Node3D = null
 
@@ -19,8 +18,6 @@ func _process(_delta: float) -> void:
 			light.light_color = chase_light_color
 		if target is Throwable:
 			light.light_color = wary_light_color
-			
-		navigation_agent.target_position = target.global_position
 	else:
 		light.light_color = default_light_color
 
@@ -28,9 +25,7 @@ func _physics_process(delta: float) -> void:
 	handle_view()
 	
 	if target:
-		var next_pos = navigation_agent.get_next_path_position()
-		var direction = (next_pos - position).normalized() * SPEED
-		velocity = Vector3(direction.x, velocity.y, direction.z)
+		var direction = (target.position - position).normalized() * SPEED
 		
 		var look_pos = Vector3(target.global_position.x, global_position.y, target.global_position.z) - global_position
 		var target_angle = Vector3.BACK.angle_to(look_pos)
