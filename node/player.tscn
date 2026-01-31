@@ -1,31 +1,32 @@
 [gd_scene format=3 uid="uid://c71la4alo7ki1"]
 
 [ext_resource type="Script" uid="uid://bcrlw1eb4lpmw" path="res://scripts/player.gd" id="1_1n1oq"]
-[ext_resource type="Texture2D" uid="uid://c24gq06dj6366" path="res://thirdparty/kenney-scribble-platformer/PNG/Default/character_roundGreen.png" id="1_ial8t"]
 [ext_resource type="Script" uid="uid://dnshbydrkta0l" path="res://scripts/player/player_input.gd" id="2_ourj3"]
+[ext_resource type="ArrayMesh" uid="uid://dx40cap4va0p8" path="res://models/test-char/test-char.obj" id="3_ourj3"]
 [ext_resource type="Script" uid="uid://dab1iic18o3db" path="res://scripts/state-machine/player/player_state_machine.gd" id="3_r142e"]
 [ext_resource type="Script" uid="uid://dpw73sar5a61o" path="res://scripts/state-machine/player/walk_player_state.gd" id="4_q2goq"]
 [ext_resource type="Script" uid="uid://d7lpx3pt02n3" path="res://scripts/state-machine/player/bash_player_state.gd" id="5_3bvod"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1n1oq"]
-radius = 18.027756
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b1yxh"]
+radius = 0.32128906
+height = 1.081543
 
-[node name="Player" type="CharacterBody2D" unique_id=1861747996]
+[node name="Player" type="CharacterBody3D" unique_id=255802474]
 motion_mode = 1
 script = ExtResource("1_1n1oq")
-bash_velocity = 800.0
+bash_velocity = 30.0
 bash_duration = 0.35
 
 [node name="PlayerInput" type="Node" parent="." unique_id=1711742894]
 script = ExtResource("2_ourj3")
 input_prefix = &"t2"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=847813234]
-position = Vector2(0, -10)
-texture = ExtResource("1_ial8t")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=953722308]
+mesh = ExtResource("3_ourj3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=726122701]
-shape = SubResource("CircleShape2D_1n1oq")
+[node name="CollisionShape2D" type="CollisionShape3D" parent="." unique_id=556485750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53397226, 0)
+shape = SubResource("CapsuleShape3D_b1yxh")
 
 [node name="PlayerStateMachine" type="Node" parent="." unique_id=1623184669 node_paths=PackedStringArray("current_state")]
 script = ExtResource("3_r142e")

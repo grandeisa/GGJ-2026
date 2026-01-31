@@ -18,7 +18,7 @@ func _enter_state() -> void:
 	timer.start(player.bash_duration)
 
 func _physics_update_state(_delta: float) -> void:
-	player.velocity = direction * player.bash_velocity
+	player.velocity = Vector3(direction.x, 0, direction.y) * player.bash_velocity
 	
 	player.move_and_slide()
 

@@ -2,15 +2,21 @@
 
 [ext_resource type="PackedScene" uid="uid://c71la4alo7ki1" path="res://node/player.tscn" id="1_dud2x"]
 
-[node name="TestScene" type="Node2D" unique_id=1927312268]
+[node name="TestScene" type="Node3D" unique_id=1253598314]
 
-[node name="Player" parent="." unique_id=1861747996 instance=ExtResource("1_dud2x")]
-position = Vector2(227, 132)
+[node name="Player" parent="." unique_id=255802474 instance=ExtResource("1_dud2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5808606, 0, 0.44050813)
 
-[node name="Player2" parent="." unique_id=1826262427 instance=ExtResource("1_dud2x")]
-position = Vector2(376, 205)
+[node name="Player2" parent="." unique_id=1236062245 instance=ExtResource("1_dud2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19341135, 0, 3.373542)
 
 [node name="PlayerInput" parent="Player2" index="0" unique_id=1711742894]
 input_prefix = &"j1"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=460621807]
+transform = Transform3D(0.90947574, -0.22674781, 0.34848154, 0, 0.8381854, 0.54538536, -0.4157571, -0.4960147, 0.7623093, 3.979227, 2.60213, 5.8780117)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=820018520]
+transform = Transform3D(1, 0, 0, 0, 0.77090245, 0.63695323, 0, -0.63695323, 0.77090245, 0, 0, 0)
 
 [editable path="Player2"]
