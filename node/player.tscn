@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bcrlw1eb4lpmw" path="res://scripts/player.gd" id="1_1n1oq"]
 [ext_resource type="Texture2D" uid="uid://c24gq06dj6366" path="res://thirdparty/kenney-scribble-platformer/PNG/Default/character_roundGreen.png" id="1_ial8t"]
+[ext_resource type="Script" uid="uid://dab1iic18o3db" path="res://scripts/state-machine/player/player_state_machine.gd" id="3_r142e"]
+[ext_resource type="Script" uid="uid://dpw73sar5a61o" path="res://scripts/state-machine/player/walk_player_state.gd" id="4_q2goq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1n1oq"]
 radius = 18.027756
@@ -16,3 +18,11 @@ texture = ExtResource("1_ial8t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=726122701]
 shape = SubResource("CircleShape2D_1n1oq")
+
+[node name="PlayerStateMachine" type="Node" parent="." unique_id=1623184669 node_paths=PackedStringArray("current_state")]
+script = ExtResource("3_r142e")
+current_state = NodePath("Walk")
+
+[node name="Walk" type="Node" parent="PlayerStateMachine" unique_id=436228990]
+script = ExtResource("4_q2goq")
+metadata/_custom_type_script = "uid://cigifrvr4jil7"
