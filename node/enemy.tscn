@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://cvwekly5f6bwj"]
 
 [ext_resource type="Script" uid="uid://jqa8traq5ltv" path="res://scripts/enemy/enemy.gd" id="1_1vtfq"]
-[ext_resource type="ArrayMesh" uid="uid://dx40cap4va0p8" path="res://models/test-char/test-char.obj" id="3_b5liu"]
+[ext_resource type="ArrayMesh" uid="uid://b55363f8od16w" path="res://thirdparty/kenney-mini-characters/Models/OBJ format/character-male-c.obj" id="2_1vtfq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b1yxh"]
-radius = 0.32128906
-height = 1.081543
+radius = 0.20410156
+height = 0.78393555
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1vtfq"]
-size = Vector3(2.0031738, 2.5166016, 1)
+size = Vector3(1.5, 2.517, 1)
 
 [node name="Enemy" type="CharacterBody3D" unique_id=255802474]
 collision_layer = 4
@@ -16,14 +16,15 @@ collision_mask = 15
 script = ExtResource("1_1vtfq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=953722308]
-mesh = ExtResource("3_b5liu")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+mesh = ExtResource("2_1vtfq")
 
 [node name="CollisionShape2D" type="CollisionShape3D" parent="." unique_id=556485750]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53397226, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14880371, 0)
 shape = SubResource("CapsuleShape3D_b1yxh")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1893362473]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0.11958367)
 light_color = Color(1, 1, 0, 1)
 light_energy = 16.0
 shadow_enabled = true
@@ -35,5 +36,5 @@ collision_layer = 0
 collision_mask = 10
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=827520216]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.055541992, 0.50000006, 1.7583008)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.056, 0, 1.4368609)
 shape = SubResource("BoxShape3D_1vtfq")

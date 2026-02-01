@@ -15,7 +15,7 @@ ambient_light_energy = 0.5
 [node name="TestScene" type="Node3D" unique_id=1253598314]
 
 [node name="Player" parent="." unique_id=255802474 instance=ExtResource("1_80oma")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581, 0.1, -2.3247085)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581, 0.25, -2.325)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=460621807]
 transform = Transform3D(1, 0, 0, 0, 0.41312033, 0.9106765, 0, -0.9106765, 0.41312033, 0, 3.8485987, 2.6716409)
@@ -24,10 +24,10 @@ transform = Transform3D(1, 0, 0, 0, 0.41312033, 0.9106765, 0, -0.9106765, 0.4131
 environment = SubResource("Environment_qfgip")
 
 [node name="Enemy" parent="." unique_id=1093404662 instance=ExtResource("2_oohqq")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.3385146, 0.1, 1.2122743)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.339, 0.25, 1.212)
 
 [node name="Enemy2" parent="." unique_id=593822985 instance=ExtResource("2_oohqq")]
-transform = Transform3D(0.28394836, 0, 0.9588396, 0, 1, 0, -0.9588396, 0, 0.28394836, -3.3510466, 0.1, 0.108440876)
+transform = Transform3D(0.28394836, 0, 0.9588396, 0, 1, 0, -0.9588396, 0, 0.28394836, -3.351, 0.25, 0.108)
 
 [node name="Throwable" parent="." unique_id=108535842 instance=ExtResource("3_kmh54")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5934471, 0.5670419, 1)

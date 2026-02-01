@@ -2,17 +2,16 @@
 
 [ext_resource type="Script" uid="uid://bcrlw1eb4lpmw" path="res://scripts/player.gd" id="1_1n1oq"]
 [ext_resource type="Script" uid="uid://dnshbydrkta0l" path="res://scripts/player/player_input.gd" id="2_ourj3"]
-[ext_resource type="ArrayMesh" uid="uid://dx40cap4va0p8" path="res://models/test-char/test-char.obj" id="3_ourj3"]
+[ext_resource type="ArrayMesh" uid="uid://c2m4motmxmb5p" path="res://thirdparty/kenney-mini-characters/Models/OBJ format/character-male-d.obj" id="3_ourj3"]
 [ext_resource type="Script" uid="uid://dab1iic18o3db" path="res://scripts/state-machine/player/player_state_machine.gd" id="3_r142e"]
 [ext_resource type="Script" uid="uid://dpw73sar5a61o" path="res://scripts/state-machine/player/walk_player_state.gd" id="4_q2goq"]
 [ext_resource type="Script" uid="uid://d7lpx3pt02n3" path="res://scripts/state-machine/player/bash_player_state.gd" id="5_3bvod"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b1yxh"]
-radius = 0.32128906
-height = 1.081543
+radius = 0.20947266
+height = 0.73516846
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ourj3"]
-radius = 1.0
 
 [node name="Player" type="CharacterBody3D" unique_id=255802474]
 collision_layer = 2
@@ -26,10 +25,11 @@ script = ExtResource("2_ourj3")
 input_prefix = &"t2"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=953722308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 mesh = ExtResource("3_ourj3")
 
 [node name="CollisionShape2D" type="CollisionShape3D" parent="." unique_id=556485750]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53397226, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08340454, 0)
 shape = SubResource("CapsuleShape3D_b1yxh")
 
 [node name="PlayerStateMachine" type="Node" parent="." unique_id=1623184669 node_paths=PackedStringArray("current_state")]
@@ -55,8 +55,7 @@ collision_layer = 0
 collision_mask = 24
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ItemArea3D" unique_id=1794583153]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("SphereShape3D_ourj3")
 
 [node name="ItemOrigin" type="Node3D" parent="." unique_id=1302928198]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.34519768)
