@@ -1,3 +1,4 @@
+class_name PlayerSpawner
 extends Node3D
 
 const PLAYER_DISTANCE: float = 1
@@ -5,6 +6,8 @@ const PLAYER_DISTANCE: float = 1
 @export var player_scene: PackedScene
 @export var viewport_container: Container
 @export var timeout_spot: Node3D
+
+var players: Array[Player] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,6 +24,7 @@ func _ready() -> void:
 		player.exit_timeout.connect(func() : reset_player_position(player))
 		
 		get_tree().current_scene.add_child.call_deferred(player)
+		players.append(player)
 
 func send_player_to_timeout(player: Player) -> void:
 	player.position = timeout_spot.position + (Vector3.FORWARD * PLAYER_DISTANCE).rotated(Vector3.UP, randf_range(0, PI * 2))

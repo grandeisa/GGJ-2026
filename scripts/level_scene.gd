@@ -1,8 +1,9 @@
 extends Node3D
 
-@export var max_time: float = 90.0
+@export var max_time: float = 30.0
 @export var time_label: Label
 @export var level_end_scene_path: StringName
+@export var spawner: PlayerSpawner
 
 var level_timer: Timer
 
@@ -23,4 +24,8 @@ func update_time_text() -> void:
 	time_label.text = "%02d:%04.1f" % [minutes, seconds]
 
 func _on_level_timer_end() -> void:
+	PlayerManager.player_coin_count = []
+	for player in spawner.players:
+		PlayerManager.player_coin_count.append(player.coin_count)
+	
 	get_tree().change_scene_to_file(level_end_scene_path)

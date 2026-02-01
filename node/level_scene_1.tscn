@@ -14,10 +14,11 @@ background_energy_multiplier = 2.5
 ambient_light_color = Color(0, 1, 1, 1)
 ambient_light_energy = 0.5
 
-[node name="TestScene" type="Node3D" unique_id=1253598314 node_paths=PackedStringArray("time_label")]
+[node name="TestScene" type="Node3D" unique_id=1253598314 node_paths=PackedStringArray("time_label", "spawner")]
 script = ExtResource("1_1wryc")
 time_label = NodePath("UI/TimeLabel")
-level_end_scene_path = &"res://node/join-scene/player_join_scene.tscn"
+level_end_scene_path = &"res://node/level_end_scene.tscn"
+spawner = NodePath("PlayerSpawner")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=919260181]
 environment = SubResource("Environment_qfgip")
