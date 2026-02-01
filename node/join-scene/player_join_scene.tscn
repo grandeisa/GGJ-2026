@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ddgl722t5nuax"]
+
+[ext_resource type="Script" uid="uid://c3i1ak3rhy1wk" path="res://scripts/player_join_scene.gd" id="1_iaiy7"]
+[ext_resource type="PackedScene" uid="uid://df21girq6ad3w" path="res://node/join-scene/player-join-card.tscn" id="2_0vxid"]
+
+[node name="PlayerJoinScene" type="Control" unique_id=380597198 node_paths=PackedStringArray("card_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iaiy7")
+join_card = ExtResource("2_0vxid")
+card_container = NodePath("HBoxContainer")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=209553717]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
