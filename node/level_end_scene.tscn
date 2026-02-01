@@ -10,7 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5kmru")
-next_scene = &"res://node/level_scene_1.tscn"
+next_scene = &"res://node/join-scene/player_join_scene.tscn"
 
 [node name="ResultLabel" type="Label" parent="." unique_id=201422816]
 layout_mode = 1
