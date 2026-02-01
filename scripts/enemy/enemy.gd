@@ -10,6 +10,7 @@ const TURN_SPEED = 30.0
 @onready var light: SpotLight3D = $SpotLight3D
 @onready var view_area: Area3D = $Area3D
 @onready var model_animator: AnimationPlayer = $Model/AnimationPlayer
+@onready var player_caught_audio: AudioStreamPlayer = $PlayerCaughtAudio
 
 var target: Node3D = null
 
@@ -65,6 +66,9 @@ func handle_view() -> void:
 			if result:
 				if result.collider == body:
 					new_target = body
+					if body is Player:
+						player_caught_audio.pitch_scale = 1 + randf_range(-0.05, -0.05)
+						player_caught_audio.play()
 	target = new_target
 		
 		

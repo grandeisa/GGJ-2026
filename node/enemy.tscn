@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jqa8traq5ltv" path="res://scripts/enemy/enemy.gd" id="1_1vtfq"]
 [ext_resource type="PackedScene" uid="uid://dhrhl1vsfnjka" path="res://thirdparty/kenney-graveyard-kit/Models/FBX format/character-skeleton.fbx" id="2_1vtfq"]
+[ext_resource type="AudioStream" uid="uid://lhexkolocinm" path="res://sfx/spotted.wav" id="3_h100i"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b1yxh"]
 radius = 0.20410156
@@ -36,3 +37,7 @@ collision_mask = 10
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=827520216]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.056, 0, 1.4368609)
 shape = SubResource("BoxShape3D_1vtfq")
+
+[node name="PlayerCaughtAudio" type="AudioStreamPlayer" parent="." unique_id=14115687]
+stream = ExtResource("3_h100i")
+volume_db = -15.0

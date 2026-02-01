@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dab1iic18o3db" path="res://scripts/state-machine/player/player_state_machine.gd" id="3_r142e"]
 [ext_resource type="Script" uid="uid://dpw73sar5a61o" path="res://scripts/state-machine/player/walk_player_state.gd" id="4_q2goq"]
 [ext_resource type="Script" uid="uid://d7lpx3pt02n3" path="res://scripts/state-machine/player/bash_player_state.gd" id="5_3bvod"]
+[ext_resource type="AudioStream" uid="uid://4sevj53rsjav" path="res://sfx/coin_pickup.wav" id="7_b1yxh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b1yxh"]
 radius = 0.20947266
@@ -52,3 +53,7 @@ shape = SubResource("SphereShape3D_ourj3")
 
 [node name="ItemOrigin" type="Node3D" parent="." unique_id=1302928198]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.34519768)
+
+[node name="PickupAudio" type="AudioStreamPlayer" parent="." unique_id=987584475]
+stream = ExtResource("7_b1yxh")
+volume_db = -10.0
