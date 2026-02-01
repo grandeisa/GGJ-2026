@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 PlayerManager="*uid://bxfqaeiipmfp7"
 
+[display]
+
+window/size/mode=3
+
 [input]
 
 ui_accept={
