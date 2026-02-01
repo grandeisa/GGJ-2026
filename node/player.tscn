@@ -67,7 +67,7 @@ time_label = NodePath("../../SubViewportContainer/SubViewport/PlayerUI/TimeOutCo
 timeout_ui = NodePath("../../SubViewportContainer/SubViewport/PlayerUI/TimeOutContainer")
 metadata/_custom_type_script = "uid://cigifrvr4jil7"
 
-[node name="ItemArea3D" type="Area3D" parent="." unique_id=1614197746]
+[node name="ItemArea3D" type="Area3D" parent="." unique_id=1614197746 groups=["item-area"]]
 collision_layer = 0
 collision_mask = 24
 

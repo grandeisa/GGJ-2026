@@ -2,21 +2,37 @@
 
 [ext_resource type="Script" uid="uid://caycba5ev6fbb" path="res://scripts/throwable.gd" id="1_lrfbq"]
 [ext_resource type="ArrayMesh" uid="uid://cdauyxjjjea5u" path="res://thirdparty/kenney-graveyard-kit/Models/OBJ format/lantern-glass.obj" id="2_2khwy"]
-[ext_resource type="Material" uid="uid://b5fsxa4yufufm" path="res://shaders/outline_shader_material.tres" id="2_uactw"]
+[ext_resource type="Shader" uid="uid://diya5vh3w1gmw" path="res://shaders/outline.gdshader" id="2_uactw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oms0t"]
+render_priority = 0
+shader = ExtResource("2_uactw")
+shader_parameter/color = Color(0.101960786, 0.14509805, 0.1882353, 1)
+shader_parameter/size = 1.0999999977648
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_uactw"]
 height = 0.3
 radius = 0.125
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_uactw"]
+
 [node name="Throwable" type="RigidBody3D" unique_id=108535842]
 collision_layer = 8
 collision_mask = 15
 script = ExtResource("1_lrfbq")
+on_range_outline_color = Color(0.88, 0.8687067, 0.20240001, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2099273949]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15804866, 0)
-material_overlay = ExtResource("2_uactw")
+material_overlay = SubResource("ShaderMaterial_oms0t")
 mesh = ExtResource("2_2khwy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=512517404]
 shape = SubResource("CylinderShape3D_uactw")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=956790047]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1251473231]
+shape = SubResource("SphereShape3D_uactw")
