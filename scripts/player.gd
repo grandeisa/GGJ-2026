@@ -11,6 +11,7 @@ var coin_count = 0
 @onready var input: PlayerInput = $PlayerInput
 @onready var item_area: Area3D = $ItemArea3D
 @onready var item_origin: Node3D = $ItemOrigin
+@onready var model_animator: AnimationPlayer = $Model/AnimationPlayer
 
 var direction: Vector2 = Vector2.UP
 

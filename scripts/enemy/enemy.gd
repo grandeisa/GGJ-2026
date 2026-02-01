@@ -9,10 +9,12 @@ const TURN_SPEED = 30.0
 
 @onready var light: SpotLight3D = $SpotLight3D
 @onready var view_area: Area3D = $Area3D
+@onready var model_animator: AnimationPlayer = $Model/AnimationPlayer
 
 var target: Node3D = null
 
 func _process(_delta: float) -> void:
+	model_animator.play("idle")
 	if target:
 		if target is Player:
 			light.light_color = chase_light_color

@@ -42,9 +42,11 @@ func _physics_update_state(delta: float) -> void:
 		player_rotation = angle_to_move_direction
 		var move_velocity = move_direction * Player.SPEED
 		player.velocity = Vector3(move_velocity.x, player.velocity.y, move_velocity.y)
+		player.model_animator.play('sprint')
 	else:
 		player.velocity.x = move_toward(player.velocity.x, 0, Player.SPEED)
 		player.velocity.z = move_toward(player.velocity.z, 0, Player.SPEED)
+		player.model_animator.play('idle')
 		
 	player.rotation.y = player_rotation
 

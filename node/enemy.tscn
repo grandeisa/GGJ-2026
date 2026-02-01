@@ -15,7 +15,7 @@ collision_layer = 4
 collision_mask = 15
 script = ExtResource("1_1vtfq")
 
-[node name="character-male-c" parent="." unique_id=308401878 instance=ExtResource("2_1vtfq")]
+[node name="Model" parent="." unique_id=308401878 instance=ExtResource("2_1vtfq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 
 [node name="CollisionShape2D" type="CollisionShape3D" parent="." unique_id=556485750]
