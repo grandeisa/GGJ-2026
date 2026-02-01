@@ -10,8 +10,8 @@ var player_rotation = 0
 var item: Throwable
 
 func _update_state(_delta: float) -> void:
-	if player.input.is_action_just_pressed("bash"):
-		state_transition.emit(self, "bash")
+	#if player.input.is_action_just_pressed("bash"):
+	#	state_transition.emit(self, "bash")
 	
 	if player.input.is_action_just_pressed("item"):
 		if not item:
