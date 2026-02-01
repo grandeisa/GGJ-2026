@@ -7,12 +7,21 @@
 [ext_resource type="PackedScene" uid="uid://cyxdjrm3dp1pk" path="res://node/coin.tscn" id="4_ryrts"]
 [ext_resource type="MeshLibrary" uid="uid://dm3wq6n4rfo2f" path="res://mesh-libraries/mini-dungeon.tres" id="5_nlvs3"]
 [ext_resource type="Script" uid="uid://dqs73fkfhqn8v" path="res://scripts/player_spawner.gd" id="5_qyruc"]
+[ext_resource type="Shader" uid="uid://bhn4bofwkp8e" path="res://shaders/vhs.gdshader" id="8_ryrts"]
 
 [sub_resource type="Environment" id="Environment_qfgip"]
+background_mode = 2
 background_color = Color(0.45882353, 0.78039217, 0.7137255, 1)
 background_energy_multiplier = 2.5
-ambient_light_color = Color(0, 1, 1, 1)
+ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nlvs3"]
+shader = ExtResource("8_ryrts")
+shader_parameter/wiggle = 0.03999999910592
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 0.6000000285
+shader_parameter/blur_samples = 15
 
 [node name="TestScene" type="Node3D" unique_id=1253598314 node_paths=PackedStringArray("time_label", "spawner")]
 script = ExtResource("1_1wryc")
@@ -353,6 +362,16 @@ timeout_spot = NodePath("../TimeoutSpot")
 
 [node name="UI" type="Control" parent="." unique_id=1654811539]
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI" unique_id=360066811]
+z_index = 20
+material = SubResource("ShaderMaterial_nlvs3")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
