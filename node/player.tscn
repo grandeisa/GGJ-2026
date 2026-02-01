@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bcrlw1eb4lpmw" path="res://scripts/player.gd" id="1_1n1oq"]
 [ext_resource type="Script" uid="uid://dnshbydrkta0l" path="res://scripts/player/player_input.gd" id="2_ourj3"]
-[ext_resource type="ArrayMesh" uid="uid://c2m4motmxmb5p" path="res://thirdparty/kenney-mini-characters/Models/OBJ format/character-male-d.obj" id="3_ourj3"]
+[ext_resource type="PackedScene" uid="uid://dkoswyvr8xfgj" path="res://thirdparty/kenney-mini-characters/Models/FBX format/character-male-d.fbx" id="3_ourj3"]
 [ext_resource type="Script" uid="uid://dab1iic18o3db" path="res://scripts/state-machine/player/player_state_machine.gd" id="3_r142e"]
 [ext_resource type="Script" uid="uid://dpw73sar5a61o" path="res://scripts/state-machine/player/walk_player_state.gd" id="4_q2goq"]
 [ext_resource type="Script" uid="uid://d7lpx3pt02n3" path="res://scripts/state-machine/player/bash_player_state.gd" id="5_3bvod"]
@@ -24,9 +24,8 @@ bash_duration = 0.35
 script = ExtResource("2_ourj3")
 input_prefix = &"t2"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=953722308]
+[node name="character-male-d" parent="." unique_id=119898574 instance=ExtResource("3_ourj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
-mesh = ExtResource("3_ourj3")
 
 [node name="CollisionShape2D" type="CollisionShape3D" parent="." unique_id=556485750]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08340454, 0)
@@ -43,12 +42,6 @@ metadata/_custom_type_script = "uid://cigifrvr4jil7"
 [node name="Bash" type="Node" parent="PlayerStateMachine" unique_id=922323001]
 script = ExtResource("5_3bvod")
 metadata/_custom_type_script = "uid://cigifrvr4jil7"
-
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1893362473]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.25343156, 0)
-light_color = Color(1, 1, 0, 1)
-spot_range = 2.7141414
-spot_angle = 27.98753
 
 [node name="ItemArea3D" type="Area3D" parent="." unique_id=1614197746]
 collision_layer = 0
