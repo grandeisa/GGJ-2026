@@ -8,7 +8,7 @@ valid=false
 
 [deps]
 
-source_file="res://thirdparty/kenney_mini-dungeon/Models/OBJ format/character-human.obj"
+source_file="res://thirdparty/kenney-mini-dungeon/Models/OBJ format/character-human.obj"
 
 [params]
 
