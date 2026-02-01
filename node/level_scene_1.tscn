@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bo2dih3pd7gsv"]
 
+[ext_resource type="Script" uid="uid://d3nurc0sht3ao" path="res://scripts/level_scene.gd" id="1_1wryc"]
 [ext_resource type="PackedScene" uid="uid://c71la4alo7ki1" path="res://node/player.tscn" id="1_qyruc"]
 [ext_resource type="PackedScene" uid="uid://cvwekly5f6bwj" path="res://node/enemy.tscn" id="2_p08cv"]
 [ext_resource type="PackedScene" uid="uid://bdvl2rhle25f0" path="res://node/throwable.tscn" id="3_1wryc"]
@@ -13,7 +14,10 @@ background_energy_multiplier = 2.5
 ambient_light_color = Color(0, 1, 1, 1)
 ambient_light_energy = 0.5
 
-[node name="TestScene" type="Node3D" unique_id=1253598314]
+[node name="TestScene" type="Node3D" unique_id=1253598314 node_paths=PackedStringArray("time_label")]
+script = ExtResource("1_1wryc")
+time_label = NodePath("UI/TimeLabel")
+level_end_scene_path = &"res://node/join-scene/player_join_scene.tscn"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=919260181]
 environment = SubResource("Environment_qfgip")
@@ -52,12 +56,38 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("5_qyruc")
 player_scene = ExtResource("1_qyruc")
-viewport_container = NodePath("../ViewsContainer")
+viewport_container = NodePath("../UI/ViewsContainer")
 
-[node name="ViewsContainer" type="GridContainer" parent="." unique_id=1432479485]
+[node name="UI" type="Control" parent="." unique_id=1654811539]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ViewsContainer" type="GridContainer" parent="UI" unique_id=1432479485]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 2
+
+[node name="TimeLabel" type="Label" parent="UI" unique_id=386703261]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = -11.5
+offset_right = 27.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "00:00.0"
+horizontal_alignment = 1
+vertical_alignment = 1
