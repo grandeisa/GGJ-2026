@@ -126,5 +126,5 @@ vertical_alignment = 1
 script = ExtResource("8_km7it")
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/CameraFollow" unique_id=1758777215]
-transform = Transform3D(1, 0, 0, 0, 0.5719455, 0.82029164, 0, -0.82029164, 0.5719455, 0, 2.583996, 1.8610637)
+transform = Transform3D(1, 0, 0, 0, 0.5719455, 0.82029164, 0, -0.82029164, 0.5719455, 0, 4.6781206, 3.2446606)
 current = true
