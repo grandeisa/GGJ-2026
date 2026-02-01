@@ -4,6 +4,9 @@ extends CharacterBody3D
 const SPEED = 10.0
 const MAX_PICKUP_PITCH_DISTANCE = 0.05
 
+signal spotted
+signal entered_timeout
+signal exit_timeout
 
 var coin_count = 0
 

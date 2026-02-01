@@ -32,9 +32,8 @@ func _physics_process(delta: float) -> void:
 		
 		var look_pos = Vector3(target.global_position.x, global_position.y, target.global_position.z) - global_position
 		var target_angle = Vector3.BACK.angle_to(look_pos)
-		rotation.y = lerp_angle(rotation.y, target_angle, TURN_SPEED * delta)
-	
-	
+		#rotation.y = lerp_angle(rotation.y, target_angle, TURN_SPEED * delta)
+		look_at_from_position(global_position, look_pos, Vector3.UP, true)
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
@@ -69,6 +68,7 @@ func handle_view() -> void:
 					if body is Player:
 						player_caught_audio.pitch_scale = 1 + randf_range(-0.05, -0.05)
 						player_caught_audio.play()
+						body.spotted.emit()
 	target = new_target
 		
 		

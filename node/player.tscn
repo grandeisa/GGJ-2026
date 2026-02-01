@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://dab1iic18o3db" path="res://scripts/state-machine/player/player_state_machine.gd" id="3_r142e"]
 [ext_resource type="Script" uid="uid://dpw73sar5a61o" path="res://scripts/state-machine/player/walk_player_state.gd" id="4_q2goq"]
 [ext_resource type="Script" uid="uid://d7lpx3pt02n3" path="res://scripts/state-machine/player/bash_player_state.gd" id="5_3bvod"]
+[ext_resource type="Script" uid="uid://dya4su3pfdvwy" path="res://scripts/state-machine/player/spotted_player_state.gd" id="7_5qpld"]
 [ext_resource type="AudioStream" uid="uid://4sevj53rsjav" path="res://sfx/coin_pickup.wav" id="7_b1yxh"]
+[ext_resource type="Script" uid="uid://c3te4tydt5viq" path="res://scripts/state-machine/player/timeout_player_state.gd" id="8_5qpld"]
 [ext_resource type="Script" uid="uid://bmit7fugpaetn" path="res://scripts/player/camera_follow.gd" id="8_km7it"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b1yxh"]
@@ -14,6 +16,9 @@ radius = 0.20947266
 height = 0.73516846
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ourj3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5qpld"]
+bg_color = Color(0.5783498, 0.5783494, 0.5783495, 0.5411765)
 
 [node name="Player" type="CharacterBody3D" unique_id=255802474]
 collision_layer = 2
@@ -45,6 +50,16 @@ metadata/_custom_type_script = "uid://cigifrvr4jil7"
 script = ExtResource("5_3bvod")
 metadata/_custom_type_script = "uid://cigifrvr4jil7"
 
+[node name="Spotted" type="Node" parent="PlayerStateMachine" unique_id=668387174]
+script = ExtResource("7_5qpld")
+metadata/_custom_type_script = "uid://cigifrvr4jil7"
+
+[node name="Timeout" type="Node" parent="PlayerStateMachine" unique_id=2043552635 node_paths=PackedStringArray("time_label", "timeout_ui")]
+script = ExtResource("8_5qpld")
+time_label = NodePath("../../SubViewportContainer/SubViewport/PlayerUI/TimeOutContainer/VBoxContainer/TimeLabel")
+timeout_ui = NodePath("../../SubViewportContainer/SubViewport/PlayerUI/TimeOutContainer")
+metadata/_custom_type_script = "uid://cigifrvr4jil7"
+
 [node name="ItemArea3D" type="Area3D" parent="." unique_id=1614197746]
 collision_layer = 0
 collision_mask = 24
@@ -73,6 +88,39 @@ stretch = true
 handle_input_locally = false
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
+
+[node name="PlayerUI" type="Control" parent="SubViewportContainer/SubViewport" unique_id=1281927891]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TimeOutContainer" type="PanelContainer" parent="SubViewportContainer/SubViewport/PlayerUI" unique_id=111565765]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5qpld")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubViewportContainer/SubViewport/PlayerUI/TimeOutContainer" unique_id=675588493]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/PlayerUI/TimeOutContainer/VBoxContainer" unique_id=322368541]
+layout_mode = 2
+text = "TIMEOUT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="SubViewportContainer/SubViewport/PlayerUI/TimeOutContainer/VBoxContainer" unique_id=1672440254]
+layout_mode = 2
+text = "00.0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CameraFollow" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=528675537]
 script = ExtResource("8_km7it")
