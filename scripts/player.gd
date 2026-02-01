@@ -15,8 +15,16 @@ var coin_count = 0
 @onready var item_origin: Node3D = $ItemOrigin
 @onready var model_animator: AnimationPlayer = $Model/AnimationPlayer
 @onready var pickup_audio: AudioStreamPlayer = $PickupAudio
+@onready var camera_follow: CameraFollow = $SubViewportContainer/SubViewport/CameraFollow
+@onready var viewport: SubViewportContainer = $SubViewportContainer
 
 var direction: Vector2 = Vector2.UP
+
+func _ready() -> void:
+	# Make camera follow sibling
+	camera_follow.target = self
+	#remove_child.call_deferred(camera_follow)
+	#get_parent().add_child.call_deferred(camera_follow)
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():

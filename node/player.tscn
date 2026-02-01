@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dpw73sar5a61o" path="res://scripts/state-machine/player/walk_player_state.gd" id="4_q2goq"]
 [ext_resource type="Script" uid="uid://d7lpx3pt02n3" path="res://scripts/state-machine/player/bash_player_state.gd" id="5_3bvod"]
 [ext_resource type="AudioStream" uid="uid://4sevj53rsjav" path="res://sfx/coin_pickup.wav" id="7_b1yxh"]
+[ext_resource type="Script" uid="uid://bmit7fugpaetn" path="res://scripts/player/camera_follow.gd" id="8_km7it"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b1yxh"]
 radius = 0.20947266
@@ -57,3 +58,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.34519768)
 [node name="PickupAudio" type="AudioStreamPlayer" parent="." unique_id=987584475]
 stream = ExtResource("7_b1yxh")
 volume_db = -10.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1773327455]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1012193865]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="CameraFollow" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=528675537]
+script = ExtResource("8_km7it")
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/CameraFollow" unique_id=1758777215]
+transform = Transform3D(1, 0, 0, 0, 0.5719455, 0.82029164, 0, -0.82029164, 0.5719455, 0, 2.583996, 1.8610637)
+current = true
