@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jqa8traq5ltv" path="res://scripts/enemy/enemy.gd" id="1_1vtfq"]
 [ext_resource type="PackedScene" uid="uid://dhrhl1vsfnjka" path="res://thirdparty/kenney-graveyard-kit/Models/FBX format/character-skeleton.fbx" id="2_1vtfq"]
+[ext_resource type="Material" uid="uid://b5fsxa4yufufm" path="res://shaders/outline_shader_material.tres" id="3_cw2am"]
 [ext_resource type="AudioStream" uid="uid://lhexkolocinm" path="res://sfx/spotted.wav" id="3_h100i"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b1yxh"]
@@ -17,6 +18,24 @@ collision_mask = 15
 script = ExtResource("1_1vtfq")
 
 [node name="Model" parent="." unique_id=1589372784 instance=ExtResource("2_1vtfq")]
+
+[node name="leg-left" parent="Model/character-skeleton/root" parent_id_path=PackedInt32Array(1589372784, 1627755036) index="0" unique_id=2025832634]
+material_overlay = ExtResource("3_cw2am")
+
+[node name="torso" parent="Model/character-skeleton/root" parent_id_path=PackedInt32Array(1589372784, 1627755036) index="1" unique_id=286750984]
+material_overlay = ExtResource("3_cw2am")
+
+[node name="head" parent="Model/character-skeleton/root/torso" index="0" unique_id=345425569]
+material_overlay = ExtResource("3_cw2am")
+
+[node name="arm-right" parent="Model/character-skeleton/root/torso" index="1" unique_id=1599740966]
+material_overlay = ExtResource("3_cw2am")
+
+[node name="arm-left" parent="Model/character-skeleton/root/torso" index="2" unique_id=1901490789]
+material_overlay = ExtResource("3_cw2am")
+
+[node name="leg-right" parent="Model/character-skeleton/root" parent_id_path=PackedInt32Array(1589372784, 1627755036) index="2" unique_id=1292352230]
+material_overlay = ExtResource("3_cw2am")
 
 [node name="CollisionShape2D" type="CollisionShape3D" parent="." unique_id=556485750]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14880371, 0)
@@ -41,3 +60,5 @@ shape = SubResource("BoxShape3D_1vtfq")
 [node name="PlayerCaughtAudio" type="AudioStreamPlayer" parent="." unique_id=14115687]
 stream = ExtResource("3_h100i")
 volume_db = -15.0
+
+[editable path="Model"]

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cyxdjrm3dp1pk"]
 
+[ext_resource type="Material" uid="uid://b5fsxa4yufufm" path="res://shaders/outline_shader_material.tres" id="1_63whh"]
 [ext_resource type="ArrayMesh" uid="uid://dxbk61wwiyoq2" path="res://thirdparty/kenney-mini-dungeon/Models/OBJ format/coin.obj" id="1_ximgy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ximgy"]
@@ -10,6 +11,7 @@ collision_layer = 16
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1506124297]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.215, 0)
+material_overlay = ExtResource("1_63whh")
 mesh = ExtResource("1_ximgy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1699834037]

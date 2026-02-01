@@ -10,11 +10,11 @@
 [ext_resource type="Shader" uid="uid://bhn4bofwkp8e" path="res://shaders/vhs.gdshader" id="8_ryrts"]
 
 [sub_resource type="Environment" id="Environment_qfgip"]
-background_mode = 2
-background_color = Color(0.45882353, 0.78039217, 0.7137255, 1)
+background_mode = 1
 background_energy_multiplier = 2.5
+ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.5
+ambient_light_energy = 0.7
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nlvs3"]
 shader = ExtResource("8_ryrts")

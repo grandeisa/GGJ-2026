@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dnshbydrkta0l" path="res://scripts/player/player_input.gd" id="2_ourj3"]
 [ext_resource type="PackedScene" uid="uid://dkoswyvr8xfgj" path="res://thirdparty/kenney-mini-characters/Models/FBX format/character-male-d.fbx" id="3_ourj3"]
 [ext_resource type="Script" uid="uid://dab1iic18o3db" path="res://scripts/state-machine/player/player_state_machine.gd" id="3_r142e"]
+[ext_resource type="Material" uid="uid://b5fsxa4yufufm" path="res://shaders/outline_shader_material.tres" id="4_dsjly"]
 [ext_resource type="Script" uid="uid://dpw73sar5a61o" path="res://scripts/state-machine/player/walk_player_state.gd" id="4_q2goq"]
 [ext_resource type="Script" uid="uid://d7lpx3pt02n3" path="res://scripts/state-machine/player/bash_player_state.gd" id="5_3bvod"]
 [ext_resource type="Script" uid="uid://dya4su3pfdvwy" path="res://scripts/state-machine/player/spotted_player_state.gd" id="7_5qpld"]
@@ -33,6 +34,12 @@ input_prefix = &"t2"
 
 [node name="Model" parent="." unique_id=119898574 instance=ExtResource("3_ourj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+
+[node name="body-mesh" parent="Model/character-male-d/Skeleton3D" parent_id_path=PackedInt32Array(119898574, 1729440243) index="0" unique_id=1561801356]
+material_overlay = ExtResource("4_dsjly")
+
+[node name="head-mesh" parent="Model/character-male-d/Skeleton3D" parent_id_path=PackedInt32Array(119898574, 1729440243) index="1" unique_id=1649104414]
+material_overlay = ExtResource("4_dsjly")
 
 [node name="CollisionShape2D" type="CollisionShape3D" parent="." unique_id=556485750]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08340454, 0)
@@ -128,3 +135,5 @@ script = ExtResource("8_km7it")
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/CameraFollow" unique_id=1758777215]
 transform = Transform3D(1, 0, 0, 0, 0.5719455, 0.82029164, 0, -0.82029164, 0.5719455, 0, 4.6781206, 3.2446606)
 current = true
+
+[editable path="Model"]

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="GGJ-2026"
+config/name="UNSEEN"
 run/main_scene="uid://ddgl722t5nuax"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -177,3 +177,4 @@ j2-item={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method.mobile="forward_plus"
