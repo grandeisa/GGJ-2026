@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cvwekly5f6bwj"]
 
 [ext_resource type="Script" uid="uid://jqa8traq5ltv" path="res://scripts/enemy/enemy.gd" id="1_1vtfq"]
-[ext_resource type="PackedScene" uid="uid://dufugtcagulb8" path="res://thirdparty/kenney-mini-characters/Models/FBX format/character-male-c.fbx" id="2_1vtfq"]
+[ext_resource type="PackedScene" uid="uid://dhrhl1vsfnjka" path="res://thirdparty/kenney-graveyard-kit/Models/FBX format/character-skeleton.fbx" id="2_1vtfq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b1yxh"]
 radius = 0.20410156
@@ -15,8 +15,7 @@ collision_layer = 4
 collision_mask = 15
 script = ExtResource("1_1vtfq")
 
-[node name="Model" parent="." unique_id=308401878 instance=ExtResource("2_1vtfq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+[node name="Model" parent="." unique_id=1589372784 instance=ExtResource("2_1vtfq")]
 
 [node name="CollisionShape2D" type="CollisionShape3D" parent="." unique_id=556485750]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14880371, 0)

@@ -1,21 +1,16 @@
 [gd_scene format=3 uid="uid://cyxdjrm3dp1pk"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q7rvh"]
-albedo_color = Color(1, 1, 0, 1)
+[ext_resource type="ArrayMesh" uid="uid://dxbk61wwiyoq2" path="res://thirdparty/kenney-mini-dungeon/Models/OBJ format/coin.obj" id="1_ximgy"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_ximgy"]
-material = SubResource("StandardMaterial3D_q7rvh")
-radius = 0.2
-height = 0.4
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_q7rvh"]
-radius = 0.2
+[sub_resource type="SphereShape3D" id="SphereShape3D_ximgy"]
+radius = 0.25
 
 [node name="Coin" type="RigidBody3D" unique_id=242903663 groups=["coin"]]
 collision_layer = 16
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1506124297]
-mesh = SubResource("SphereMesh_ximgy")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.215, 0)
+mesh = ExtResource("1_ximgy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1699834037]
-shape = SubResource("SphereShape3D_q7rvh")
+shape = SubResource("SphereShape3D_ximgy")
